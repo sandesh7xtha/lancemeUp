@@ -1,0 +1,11 @@
+[
+  {
+    "image": "./logo512.png",
+    "title": "Product .png1 Title",
+    "price": "100"
+  },
+  { "image": "product2.jpg", "title": "apple 2 Title", "price": "200" },
+  { "image": "product2.jpg", "title": "Product 2 Title", "price": "200" },
+  { "image": "product2.jpg", "title": "Product 2 Title", "price": "200" },
+  { "image": "product3.jpg", "title": "Product 3 Title", "price": "300" }
+]
