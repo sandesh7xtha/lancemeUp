@@ -13,7 +13,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Redirect, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -52,7 +52,9 @@ export const LoginPage = () => {
         localStorage.setItem("token", "123");
         localStorage.setItem("name", "sandesh");
         localStorage.setItem("id", "1");
+        localStorage.setItem("type", "clint");
         navigate("/");
+        window.location.reload(false);
       } else if (
         values.email === "siwakoti@gmail.com" &&
         values.password === "apple#1"
@@ -60,7 +62,10 @@ export const LoginPage = () => {
         localStorage.setItem("token", "657");
         localStorage.setItem("name", "ramesh");
         localStorage.setItem("id", "2");
+        localStorage.setItem("type", "admin");
+
         navigate("/");
+        window.location.reload(false);
       } else {
         alert("invalid");
       }

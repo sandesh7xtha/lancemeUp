@@ -1,0 +1,47 @@
+[
+  {
+    "image": "./logo512.png",
+    "title": "Cotton T-Shirt",
+    "adv_id": "758AJDH68HG1",
+    "price": 19.99,
+    "category": "Tops",
+    "quantity": 50,
+    "location": "Kathmandu, Nepal"
+  },
+  {
+    "image": "product2.jpg",
+    "title": "Denim Jeans",
+    "adv_id": "758AJDH68HG2",
+    "price": 49.99,
+    "category": "Pants",
+    "quantity": 40,
+    "location": "Pokhara, Nepal"
+  },
+  {
+    "image": "product2.jpg",
+    "title": "Sneakers",
+    "adv_id": "758AJDH68HG3",
+    "price": 69.99,
+    "category": "Shoes",
+    "quantity": 30,
+    "location": "Lalitpur, Nepal"
+  },
+  {
+    "image": "product2.jpg",
+    "title": "Evening Dress",
+    "adv_id": "758AJDH68HG4",
+    "price": 99.99,
+    "category": "Dresses",
+    "quantity": 20,
+    "location": "Bhaktapur, Nepal"
+  },
+  {
+    "image": "product3.jpg",
+    "title": "Leather Handbag",
+    "adv_id": "758AJDH68HG5",
+    "price": 149.99,
+    "category": "Accessories",
+    "quantity": 10,
+    "location": "Biratnagar, Nepal"
+  }
+]

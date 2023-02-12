@@ -11,6 +11,92 @@ export const root = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const categories = styled.div`
+  // background-color: red;
+
+  width: 16rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  // position: fixed;
+`;
+
+export const CategoryHeading = styled.div`
+  // background-color:#d65c5c;
+
+  background-color: #62b347;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: auto;
+  padding-left: 1rem;
+`;
+
+export const categoriesSection = styled.div`
+
+p{
+    background-color:white;
+    padding-top:0.5rem;
+    padding-bottom: 0.5rem;   
+    padding-left: 1rem;
+    margin:auto; 
+    // border-style: outset;
+    position: relative;
+    transition: all 1s ease;
+    
+    &:hover {
+        // border-style: inset;
+        background-color:rgb(94, 94, 94);
+        color:white;
+        padding-left: 5rem;
+        margin-left: 20px;
+        
+      },
+
+}
+
+`;
+
+export const filterHeading = styled.div`
+  // background-color:#d65c5c;
+  background-color: #62b347;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: auto;
+  padding-left: 1rem;
+`;
+
+export const filterSection = styled.div`
+  margin-left: 0rem;
+  p {
+    margin-left: 1rem;
+  }
+`;
+
+export const input = styled.div`
+
+display: flex;
+// justify-content:space-evenly;
+align-items:center;
+margin-left: -0rem;
+
+  .iconSearch{
+    height:2rem;
+    width: 2rem;
+    color: #121212;
+    &:hover{
+      color: rgb(94, 94, 94);
+
+    }
+
+  }
+
+input[type=text]    {
+    width: 20%;
+},
+`;
+
 export const productSection = styled.div`
   justify-content: center;
 `;
@@ -89,4 +175,10 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
+`;
+
+export const subGrid = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
 `;
