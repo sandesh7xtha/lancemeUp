@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRef } from "react";
-import data from "./data.json";
+import dataFake from "./data.json";
 import * as p from "./product.css";
 import Logo from "./logo512.png";
 import Paper from "@mui/material/Paper";
@@ -13,13 +13,34 @@ import ShopIcon from "@mui/icons-material/Shop";
 import Alert from "../../src/customMaterial/alertCOMP/alert";
 import { Link } from "react-router-dom";
 
-// import { IoSearchCircle } from "react-icons/io5";
-
 export const Product = () => {
   const customAlert = useRef();
   const alt = (value) => {
     customAlert.current.success("Added to cart");
   };
+
+  const [data, setData] = useState([]);
+
+  const getProductFromDB = () => {
+    // this is were data come from backend using AXIOS
+
+    // axios
+    //   .get("http://localhost:4000/news/")
+    //   .then((res) => {
+    //     console.log(res.data.data);
+    //     setNews(res.data.data);
+    setData(dataFake);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     console.log("data insert fail");
+    //   });
+  };
+
+  useEffect(() => {
+    getProductFromDB();
+  }, []);
+
   const [searchValue, setSearchValue] = useState("");
   console.log(searchValue);
 
@@ -29,6 +50,8 @@ export const Product = () => {
   };
 
   function search(rows) {
+    console.log(minValue);
+    console.log(maxValue);
     return rows
       .filter(
         (data) =>
@@ -42,26 +65,25 @@ export const Product = () => {
             .indexOf(searchValue.toLowerCase()) > -1
       )
       .filter((data) => data.category.includes(filterValue))
-      .filter((data) => data.price < maxValue + 1)
-      .filter((data) => data.price > minValue - 1);
+      .filter((data) => data.price < maxValue)
+      .filter((data) => data.price > minValue);
   }
 
   const [minValue, setMinValue] = useState(0);
-  const [maxValue, setMaxValue] = useState(Number.MAX_SAFE_INTEGER);
+  const [maxValue, setMaxValue] = useState(Number.MAX_VALUE);
 
   const MaxMin = () => {
     let numberInputMax = document.getElementById("numberInputMax").value;
     let numberInputMin = document.getElementById("numberInputMin").value;
-
     if (numberInputMax == 0) {
-      setMaxValue(Number.MAX_SAFE_INTEGER);
+      setMaxValue(Number.MAX_VALUE);
     } else {
       setMaxValue(numberInputMax);
     }
-
     setMinValue(numberInputMin);
+
     if (numberInputMax < numberInputMin) {
-      setMinValue(0);
+      setMinValue(numberInputMin);
     }
   };
   const type = localStorage.getItem("type");
