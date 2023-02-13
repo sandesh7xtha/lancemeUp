@@ -4,21 +4,15 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import axios from "axios";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { FormControl, InputLabel } from "@mui/material";
-import Grid from "@mui/material/Grid";
 import { Navigate, useNavigate } from "react-router-dom";
+import IMGcroper from "../customMaterial/cropIMG/IMGcropper";
 
-// import { Redirect, useHistory } from "react-router-dom";
 import Alert from "../customMaterial/alertCOMP/alert";
 
-// import IMGcroper from "../../src/customMaterial/cropIMG/IMGcropper";
-// import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
-
 export const AddProduct = () => {
-  // const history = useHistory();
   const customAlert = useRef();
 
   const formik = useFormik({
@@ -45,61 +39,17 @@ export const AddProduct = () => {
       sendToDatabase(values);
     },
   });
-
   const [pic, setPic] = useState(null);
-
-  // const fileSelectedHandler = (event) => {
-  //   setPic(event.target.files[0]);
-  // };
 
   const [checkImage, setCheckImage] = useState("");
   const sendToDatabase = (values) => {
-    customAlert.current.success("good boy");
-    formik.resetForm();
-
-    // if (pic != null) {
-    //   var formData = new FormData();
-    //   formData.append("title", values.title);
-    //   formData.append("image", pic);
-    //   formData.append("description", values.description);
-    //   formData.append("category", values.category);
-    //   formData.append("price", values.price);
-    //   formData.append("used_duration", values.usedDuration);
-    //   formData.append("contact_number", values.contactNumber);
-    //   formData.append("email", values.email);
-    //   formData.append("location", values.location);
-    //   formData.append("user_id", id);
-    //   // const data = {
-    //   //   title: values.title,
-    //   //   image: pic,
-    //   //   description: values.description,
-    //   //   category: values.category,
-    //   //   price: values.price,
-    //   //   used_duration: values.usedDuration,
-    //   //   contact_number: values.contactNumber,
-    //   //   email: values.email,
-    //   //   location: values.location,
-    //   //   user_id: id,
-    //   // };
-    //   axios
-    //     .post("http://localhost:4000/secondProduct/", formData, {
-    //       headers: { Authorization: token },
-    //     })
-    //     .then((res) => {
-    //       console.log("Data inserted");
-    //       console.log(res);
-    //       // customAlert.current.success("Product Successfully added");
-    //       setCheckImage("");
-    //       formik.resetForm();
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       console.log("data insert fail");
-    //     });
-    // } else {
-    //   setCheckImage("image required");
-    //   // customAlert.current.error("Image required");
-    // }
+    if (pic != null) {
+      customAlert.current.success("good boy");
+      formik.resetForm();
+    } else {
+      setCheckImage("image required");
+      customAlert.current.error("Image required");
+    }
   };
 
   const token = localStorage.getItem("token");
@@ -123,7 +73,6 @@ export const AddProduct = () => {
   if (type === "clint") {
     return <Navigate to="/" />;
   }
-  // console.log(pic);
   return (
     <p.root>
       <p.div>
@@ -166,24 +115,15 @@ export const AddProduct = () => {
           </p.part>
 
           <p.part>
-            <p>Image</p>{" "}
-            <input
-              // onChange={fileSelectedHandler}
-              multiple
-              type="file"
-              required
-              style={{ marginLeft: "-5.5rem" }}
-            />{" "}
-            <span style={{ color: "red" }}> {checkImage}</span>
-          </p.part>
-
-          {/* <p.part>
             <p>Image</p>
             <div className="cropperDiv">
-              {/* <IMGcroper setPic={setPic} /> */}
-          {/* <span style={{ color: "red" }}> {checkImage}</span>
+              <IMGcroper setPic={setPic} />
+              <span style={{ color: "red", marginLeft: "1rem" }}>
+                {" "}
+                {checkImage}
+              </span>{" "}
             </div>
-          </p.part>  */}
+          </p.part>
 
           <p.part>
             <p>Description</p>
@@ -351,8 +291,6 @@ export const AddProduct = () => {
             <Button
               className="addbutton"
               onClick={formik.handleSubmit}
-              // onClick={()=>customAlert.current.success("good boy")}
-
               variant="outlined"
             >
               Add
