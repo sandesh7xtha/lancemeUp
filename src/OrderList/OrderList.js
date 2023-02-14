@@ -8,7 +8,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { Navigate, useNavigate } from "react-router-dom";
-import Logo from "./logo512.png";
+import Logo from "../assets/1.jpg";
 
 export const OrderList = () => {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ export const OrderList = () => {
           <p onClick={OrderList}>Order List</p>
         </p.NavMenu>
 
-        <p.addSellForm>
+        <p.OrderList>
           <TableContainer>
             <Table
               id="AdvertisementTable"
@@ -82,7 +82,7 @@ export const OrderList = () => {
               </TableBody>
             </Table>
           </TableContainer>
-        </p.addSellForm>
+        </p.OrderList>
       </p.div>
     </p.root>
   );

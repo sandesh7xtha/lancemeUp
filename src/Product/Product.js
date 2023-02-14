@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRef } from "react";
 import dataFake from "./data.json";
 import * as p from "./product.css";
-import Logo from "./logo512.png";
+import Logo from "../assets/1.jpg";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
@@ -20,7 +20,7 @@ export const Product = () => {
   };
 
   const [data, setData] = useState([]);
-
+  console.log(data);
   const getProductFromDB = () => {
     // this is were data come from backend using AXIOS
 
@@ -29,7 +29,14 @@ export const Product = () => {
     //   .then((res) => {
     //     console.log(res.data.data);
     //     setNews(res.data.data);
-    setData(dataFake);
+    try {
+      let localStoraheProducts =
+        JSON.parse(localStorage.getItem("products")) || [];
+      setData([...localStoraheProducts, ...dataFake]);
+    } catch (error) {
+      console.log(error);
+    }
+
     //   })
     //   .catch((err) => {
     //     console.log(err);
@@ -50,8 +57,8 @@ export const Product = () => {
   };
 
   function search(rows) {
-    console.log(minValue);
-    console.log(maxValue);
+    // console.log(minValue);
+    // console.log(maxValue);
     return rows
       .filter(
         (data) =>

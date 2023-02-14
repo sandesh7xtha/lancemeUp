@@ -60,12 +60,23 @@ export const Navbar = () => {
                 &nbsp;
                 <Button
                   style={{
-                    backgroundColor: "blue",
+                    borderColor: "white",
+                    borderWidth: "0.1rem",
                     borderRadius: "0.4rem",
                     borderStyle: "solid",
                     color: "white",
+                    transition: "background-color 0.3s",
+                    backgroundColor: "transparent",
                   }}
                   onClick={logout}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "white";
+                    e.target.style.color = "black";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "transparent";
+                    e.target.style.color = "white";
+                  }}
                 >
                   Logout
                 </Button>

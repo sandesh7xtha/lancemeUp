@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const root = styled.div`
-  height: 85vh;
+  height: 95vh;
   //   padding-top: 2rem;
-  margin-top: 15vh;
+  margin-top: 9vh;
   display: flex;
   justify-content: center;
   background: #e6e6e6;

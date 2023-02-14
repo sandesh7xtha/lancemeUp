@@ -2,13 +2,17 @@ import styled from "styled-components";
 
 export const Main = styled.div`
   position: fixed;
+
   top: 0;
   width: 100%;
   z-index: 6;
 `;
 export const Root = styled.div`
 // background-color: #121212;
-background-color: #62B347;
+// background-color: #62B347;
+background-color: #010100;
+// background: #2b3939;
+
 height: 9vh;
 display: flex;
 

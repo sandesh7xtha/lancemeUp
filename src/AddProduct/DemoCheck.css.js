@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const root = styled.div`
-  margin-top: 13vh;
+  margin-top: 9vh;
   display: flex;
+  background: #2b3939;
+
   @media (max-width: 1024px) {
     flex-direction: column;
     margin-top: 5vh;
@@ -24,7 +26,7 @@ export const NavMenu = styled.div`
   @media (max-width: 1024px) {
     width: 100%;
     position: static;
-    margin-top: 0;
+    margin-top: 1;
   }
   p {
     background-color: white;
@@ -44,7 +46,7 @@ export const NavMenu = styled.div`
 `;
 
 export const userName = styled.div`
-  background-color: #62b347;
+  background-color: #202d2c;
   color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -61,6 +63,8 @@ export const addSellForm = styled.div`
   margin-left: 20rem;
   background-color: white;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  // box-shadow: 0 14px 28px rgba(255, 255, 255, 0.25),
+
   @media (max-width: 1024px) {
     margin-left: 0;
     width: 100%;
@@ -80,14 +84,12 @@ export const part = styled.div`
   align-items: center;
 
   .title {
-    width: 100%;
-    max-width: 30rem;
+    width: 30rem;
     margin-right: 3.7rem;
   }
 
   .Description {
-    width: 100%;
-    max-width: 30rem;
+    width: 30rem;
     height: 10rem;
     border-color: blue;
     z-index: -0;
@@ -98,34 +100,26 @@ export const part = styled.div`
     // margin-right: 7.9rem;
   }
   .category {
-    width: 100%;
-    max-width: 13.9rem;
     margin-right: 19.9rem;
+    width: 13.9rem;
   }
   .Price {
-    width: 100%;
     margin-right: 19.9rem;
   }
   .UsedDuration {
-    width: 100%;
     margin-right: 19.9rem;
   }
   .contactNumber {
-    width: 100%;
     margin-right: 19.9rem;
   }
   .Email {
-    width: 100%;
     margin-right: 19.9rem;
   }
   .location {
-    width: 100%;
     margin-right: 19.9rem;
   }
   .addbutton {
-    width: 100%;
-    max-width: 7.9rem;
-    margin-left: 0;
+    margin-left: 7.9rem;
     margin-bottom: 1rem;
   }
 `;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const root = styled.div`
-  margin-top: 15vh;
+  margin-top: 9vh;
   min-height: 100vh;
 
   // background: #e6e6e6;
-  // background: #e6e6e6;
+  background: #2b3939;
 
   // height:
   display: flex;
@@ -24,7 +24,7 @@ export const categories = styled.div`
 export const CategoryHeading = styled.div`
   // background-color:#d65c5c;
 
-  background-color: #62b347;
+  background-color: #202d2c;
   color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -59,7 +59,7 @@ p{
 
 export const filterHeading = styled.div`
   // background-color:#d65c5c;
-  background-color: #62b347;
+  background-color: #202d2c;
   color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -70,6 +70,7 @@ export const filterHeading = styled.div`
 export const filterSection = styled.div`
   margin-left: 0rem;
   p {
+    color: white;
     margin-left: 1rem;
   }
 `;
@@ -154,14 +155,16 @@ export const Item = styled.div`
 export const Itemsub = styled.div`
   // width: 55rem;
   // height: 20rem;
-  background-color: blue;
+  // background-color: black;
   border-style: solid;
   border-width: 0.1px;
-  border-color: #cccccc;
+  border-color: white;
   border-radius: 5px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(255, 255, 255, 0.25),
+      0 10px 10px rgba(255, 255, 255, 0.22);
   }
   .PopDiv {
     display: flex;

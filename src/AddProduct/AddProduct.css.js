@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const root = styled.div`
   margin-top: 13vh;
-  // background: #e6e6e6;
   display: flex;
 `;
 
 export const div = styled.div`
   margin-left: 13rem;
+  background: #2b3939;
 `;
 
 export const NavMenu = styled.div`

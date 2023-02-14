@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import * as p from "./AddProduct.css";
-// import * as p from "./DemoCheck.css";
+// import * as p from "./AddProduct.css";
+import * as p from "./DemoCheck.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useFormik } from "formik";
@@ -45,6 +45,22 @@ export const AddProduct = () => {
   const [checkImage, setCheckImage] = useState("");
   const sendToDatabase = (values) => {
     if (pic != null) {
+      const data = {
+        title: values.title,
+        image: pic,
+        description: values.description,
+        category: values.category,
+        price: values.price,
+      };
+
+      let products = localStorage.getItem("products");
+      if (products) {
+        products = JSON.parse(products);
+      } else {
+        products = [];
+      }
+      products.push(data);
+      localStorage.setItem("products", JSON.stringify(products));
       customAlert.current.success("good boy");
       formik.resetForm();
     } else {
