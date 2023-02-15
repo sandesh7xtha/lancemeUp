@@ -8,10 +8,11 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
+// import EditIcon from "@mui/icons-material/Edit";
 import ShopIcon from "@mui/icons-material/Shop";
 import Alert from "../../src/customMaterial/alertCOMP/alert";
 import { Link } from "react-router-dom";
+import EditProduct from "./EditProductPopUp";
 
 export const Product = () => {
   const customAlert = useRef();
@@ -212,8 +213,15 @@ export const Product = () => {
                     <div style={{ display: "flex" }}>
                       {type === "admin" ? (
                         <>
-                          <EditIcon />
-                          <DeleteIcon />
+                          <EditProduct data={item} />
+
+                          <DeleteIcon
+                            onClick={() => {
+                              customAlert.current.success(
+                                "product should have  deleted if there was a server"
+                              );
+                            }}
+                          />
                         </>
                       ) : token ? (
                         <ShopIcon onClick={alt} />

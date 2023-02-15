@@ -61,7 +61,7 @@ export const AddProduct = () => {
       }
       products.push(data);
       localStorage.setItem("products", JSON.stringify(products));
-      customAlert.current.success("good boy");
+      customAlert.current.success("Product added");
       formik.resetForm();
     } else {
       setCheckImage("image required");

@@ -2,24 +2,28 @@
   {
     "image": "./logo512.png",
     "title": "Cotton T-Shirt",
+    "description": "A comfortable and stylish cotton t-shirt for everyday wear.",
     "price": "19.99",
     "category": "Tops"
   },
   {
     "image": "product2.jpg",
     "title": "Denim Jeans",
+    "description": "Classic denim jeans with a relaxed fit and straight leg.",
     "price": "49.99",
     "category": "Pants"
   },
   {
     "image": "product2.jpg",
     "title": "Sneakers",
+    "description": "Sleek and comfortable sneakers for all-day wear.",
     "price": "69.99",
     "category": "Shoes"
   },
   {
     "image": "product2.jpg",
     "title": "Evening Dress",
+    "description": "Elegant and timeless evening dress for special occasions.",
     "price": "99.99",
     "category": "Dresses"
   }
